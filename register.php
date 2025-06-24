@@ -119,6 +119,7 @@ if (isset($_POST['submit'])) {
         <input type = Fille name = "syrine" value = "syrine" checked>
         <h1> syrine <h1> <br><br>
         <h2> LALALALAALLALA <h2>
+            <h4> JDJDIOFNOZEFNOAEG <h4>
        
         <button type="submit" name="submit">S'inscrire</button>
     </form>
