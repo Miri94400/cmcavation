@@ -30,6 +30,7 @@ if (!$user) {
 <body>
     <header>
         <h1>Mon Profil</h1>
+        
         <p>Connecté en tant que <strong><?= htmlspecialchars($_SESSION['username']) ?></strong></p>
         <a href="index.php">← Retour à l'accueil</a> | 
         <a href="logout.php">Se déconnecter</a>
