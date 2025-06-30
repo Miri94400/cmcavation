@@ -25,11 +25,11 @@ $result = $stmt->fetchAll();
     <li>
         <strong><?php echo htmlspecialchars($row['title']); ?></strong> - 
         <?php echo number_format($row['price'], 2); ?> €
-        [<a href="delete_ad.php?id=<?php echo $row['id']; ?>">Supprimer</a>]
+       <a href="delete_ap.php?id=<?= $row['id'] ?>" onclick="return confirm('Supprimer cette annonce ?');">Supprimer</a>
     </li>
 <?php endforeach; ?>
 </ul>
 
 <p><a href="add_ad.php">Ajouter une nouvelle annonce</a></p>
-<p><a href="favorite.php">Voir mes favoris</a></p>
+<p><a href="get_favorite.php">Voir mes favoris</a></p>
 <p><a href="logout.php">Se déconnecter</a></p>

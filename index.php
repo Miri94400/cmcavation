@@ -30,8 +30,10 @@ $produits = $pdo->query("SELECT * FROM produits")->fetchAll();
 
         <p><strong>Bonjour <?= htmlspecialchars($user_name) ?>, bienvenue à bord !</strong></p>
         <p>Connecté en tant que : <strong><?= htmlspecialchars($user_name) ?></strong></p>
-           <a href="profil.php">Voir mon profil</a> |
-           <a href="logout.php">Se déconnecter</a>
+           <a href="profil.php">Voir mon profil</a><br><br>
+           <a href="dashboard.php">Mon Cockpit</a> <br> <br>
+
+           <a href="logout.php">Se déconnecter</a><br><br>
 
     </header>
 

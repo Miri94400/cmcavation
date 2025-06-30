@@ -45,6 +45,7 @@ if (isset($_POST['login'])) {
     <input type="password" id="password" name="password" required><br><br>
 
     <button type="submit" name="login">Se connecter</button>
+    <p><a href="forgot_password.php">Mot de passe oublié ?</a></p>
 </form>
 
 <?php if (!empty($error)) : ?>
