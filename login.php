@@ -47,8 +47,14 @@ if (isset($_POST['login'])) {
         <label for="email">Adresse e-mail :</label>
         <input type="email" id="email" name="email" required>
 
+<<<<<<< HEAD
         <label for="password">Mot de passe :</label>
         <input type="password" id="password" name="password" required>
+=======
+    <button type="submit" name="login">Se connecter</button>
+    <p><a href="forgot_password.php">Mot de passe oublié ?</a></p>
+</form>
+>>>>>>> 3546658a76f93c1acef1d7135df5b38e49c84063
 
         <button type="submit" name="login">Se connecter</button>
         <p><a href="forgot_password.php">Mot de passe oublié ?</a></p>

@@ -20,6 +20,7 @@ $result = $stmt->fetchAll();
 
     <p>Bienvenue dans ton espace personnel.</p>
 
+<<<<<<< HEAD
     <h3>Mes annonces :</h3>
     <ul>
     <?php foreach ($result as $row) : ?>
@@ -37,3 +38,19 @@ $result = $stmt->fetchAll();
     <p><a href="get_favorite.php">Voir mes favoris</a></p>
     <p><a href="logout.php">Se déconnecter</a></p>
 </div>
+=======
+<h3> Mes annonces : </h3>
+<ul>
+<?php foreach ($result as $row) : ?>
+    <li>
+        <strong><?php echo htmlspecialchars($row['title']); ?></strong> - 
+        <?php echo number_format($row['price'], 2); ?> €
+       <a href="delete_ap.php?id=<?= $row['id'] ?>" onclick="return confirm('Supprimer cette annonce ?');">Supprimer</a>
+    </li>
+<?php endforeach; ?>
+</ul>
+
+<p><a href="add_ad.php">Ajouter une nouvelle annonce</a></p>
+<p><a href="get_favorite.php">Voir mes favoris</a></p>
+<p><a href="logout.php">Se déconnecter</a></p>
+>>>>>>> 3546658a76f93c1acef1d7135df5b38e49c84063

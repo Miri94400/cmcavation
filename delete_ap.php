@@ -24,11 +24,20 @@ if ($ad_id) {
         header("Location: dashboard.php?deleted=1");
         exit;
     } else {
+<<<<<<< HEAD
         echo "<div class='delete-message'>Annonce introuvable ou vous n'avez pas le droit de la supprimer.<br>
         <a href='dashboard.php'>Retour au Cockpit</a></div>";
     }
 } else {
     echo "<div class='delete-message'>Aucune annonce sélectionnée.<br>
     <a href='dashboard.php'>Retour au dashboard</a></div>";
+=======
+        echo "Annonce introuvable ou vous n'avez pas le droit de la supprimer.<br>";
+        echo "<a href='dashboard.php'>Retour au Cockpit</a>";
+    }
+} else {
+    echo "Aucune annonce sélectionnée.<br>";
+    echo "<a href='dashboard.php'>Retour au dashboard</a>";
+>>>>>>> 3546658a76f93c1acef1d7135df5b38e49c84063
 }
 ?>

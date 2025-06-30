@@ -51,8 +51,11 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
+<<<<<<< HEAD
 <link rel="stylesheet" href="style.css">
 
+=======
+>>>>>>> 3546658a76f93c1acef1d7135df5b38e49c84063
 <h2>Ajouter une annonce</h2>
 <form method="post" enctype="multipart/form-data">
     <label>Titre : <input type="text" name="title" required></label><br><br>

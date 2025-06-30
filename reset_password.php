@@ -7,6 +7,7 @@ $stmt = $pdo->prepare("SELECT id FROM users WHERE reset_token = ? AND reset_toke
 $stmt->execute([$token]);
 $user = $stmt->fetch();
 
+<<<<<<< HEAD
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,6 +19,9 @@ $user = $stmt->fetch();
 <body>
 <div class="reset-container">
 <?php
+=======
+
+>>>>>>> 3546658a76f93c1acef1d7135df5b38e49c84063
 if ($user) {
 
     if (!empty($_POST['new_password'])) {
@@ -28,8 +32,13 @@ if ($user) {
         $stmt = $pdo->prepare("UPDATE users SET password = ?, reset_token = NULL, reset_token_expire = NULL WHERE id = ?");
         $stmt->execute([$hashed_password, $user['id']]);
 
+<<<<<<< HEAD
         echo "<div class='reset-message'>🛫 Mot de passe modifié avec succès, Commandant !<br>
               <a href='login.php'>Retour au cockpit</a></div>";
+=======
+        echo "<h2>🛫 Mot de passe modifié avec succès, Commandant !</h2>
+              <p><a href='login.php'>Retour au cockpit</a></p>";
+>>>>>>> 3546658a76f93c1acef1d7135df5b38e49c84063
         exit;
     }
     ?>
@@ -43,6 +52,7 @@ if ($user) {
     </form>
     <?php
 } else {
+<<<<<<< HEAD
     echo "<div class='reset-message error'>🚫 Lien invalide ou expiré.<br>
           Veuillez recommencer la procédure depuis la tour de contrôle.</div>";
 }
@@ -50,3 +60,9 @@ if ($user) {
 </div>
 </body>
 </html>
+=======
+    echo "<h2>🚫 Lien invalide ou expiré.</h2>
+          <p>Veuillez recommencer la procédure depuis la tour de contrôle.</p>";
+}
+?>
+>>>>>>> 3546658a76f93c1acef1d7135df5b38e49c84063
