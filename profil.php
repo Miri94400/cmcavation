@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'connexion_bdd.php';
+require_once 'config.php';
 
 // Vérifie si l'utilisateur est connecté
 if (!isset($_SESSION['user_id'])) {
