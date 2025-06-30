@@ -73,53 +73,150 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <title>Inscription</title>
-
+    .register-container {
+        background: #fff;
+        max-width: 450px;
+        margin: 60px auto 0 auto;
+        padding: 32px 28px 24px 28px;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(30, 60, 90, 0.08);
+        text-align: center;
+    }
+    
+    .register-container h2 {
+        margin-bottom: 24px;
+        color: #1a4d7a;
+    }
+    
+    .register-container label {
+        font-weight: 500;
+        color: #1a4d7a;
+        display: block;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+    
+    .register-container input[type="text"],
+    .register-container input[type="email"],
+    .register-container input[type="password"],
+    .register-container input[type="date"],
+    .register-container input[type="tel"],
+    .register-container select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #b5c9d6;
+        border-radius: 6px;
+        font-size: 1em;
+        background: #f9fbfc;
+        margin-bottom: 16px;
+    }
+    
+    .register-container button[type="submit"] {
+        background: #1a4d7a;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 0;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: background 0.2s;
+        margin-bottom: 10px;
+    }
+    
+    .register-container button[type="submit"]:hover {
+        background: #2566a8;
+    }
+    
+    .register-container a {
+        color: #2566a8;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .register-container a:hover {
+        color: #1a4d7a;
+        text-decoration: underline;
+    }
+    
+    .register-message {
+        max-width: 400px;
+        margin: 0 auto 18px auto;
+        padding: 14px 10px;
+        border-radius: 8px;
+        background: #eaf6ff;
+        color: #1a4d7a;
+        font-size: 1.08em;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(30,60,90,0.07);
+    }
+    
+    .register-message.error {
+        background: #ffeaea;
+        color: #a11a1a;
+    }
+    
+    .register-message.success {
+        background: #eaffea;
+        color: #1a7a2e;
+    }    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Inscription</h2>
-    <?php if ($error): ?>
-        <p style="color:red;"><?= htmlspecialchars($error) ?></p>
-    <?php endif; ?>
-    <?php if ($success): ?>
-        <p style="color:green;"><?= htmlspecialchars($success) ?></p>
-    <?php endif; ?>
+    <div class="register-container">
+        <h2>Inscription</h2>
+        <?php if ($error): ?>
+            <div class="register-message error"><?= htmlspecialchars($error) ?></div>
+        <?php endif; ?>
+        <?php if ($success): ?>
+            <div class="register-message success"><?= htmlspecialchars($success) ?></div>
+        <?php endif; ?>
 
-    <form method="POST" action="register.php">
-         <label for="Nom">Nom :</label>
-         <input type="text" id="Nom" name="lastname" required><br><br>
-        <label for = "Prénom" > Prénom :</label>
-        <input type = "text" id = "Prénom" name= "Prénom" required> <br><br>
-        <label for = " Genre"> Genre :</label>
-        <select id="Genre" name="Genre" required>
-            <option value="">Sélectionnez un genre</option>
-            <option value="Homme">Homme</option>
-            <option value="Femme">Femme</option>
-            <option value="Autre">Autre</option>
-    </select> <br><br>
-    <label for =" Date de naissance "> Date de naissance :</label>
-    <input type="date" id="Date de naissance" name="Date de naissance" required> <br><br>
-     <label for = "Code postal"> Code postal : </label>
-    <input type = "text" id = " Code postal" name= "Code postal" required> <br><br>
-    <label for = "text"> Ville :</label>
-    <input type = " text" id= "Ville" name= "Ville" required> <br><br>
-    <label for="Adresse"> Adresse :</label>
-    <input type="text" id="Adresse" name="Adresse" required> <br><br>
-    <label for =" Téléphone"> Téléphone :</label>
-    <input type = "tel" id = " Téléphone" name = "Téléphone" required> <br><br>
-    <label for = "username"> Nom d'utilisateur :</label>
-    <input type = "text" id= "username" name = "username" required> <br><br>
-        <label for = "email"> Adresse email :</label>
-        <input type = "email" id = "Email" name = "Email" required> <br><br>
-        
-        <label>Mot de passe :</label><br>
-        <input type = "Password" name = " Mot de passe" required> <br><br>
-        <label for="confirm_password">Confirmer le mot de passe :</label><br>
-        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
-       
-    
-        <button type="submit" name="submit">S'inscrire</button>
-    </form>
+        <form method="POST" action="register.php">
+            <label for="Nom">Nom :</label>
+            <input type="text" id="Nom" name="lastname" required>
 
+            <label for="Prénom">Prénom :</label>
+            <input type="text" id="Prénom" name="Prénom" required>
 
+            <label for="Genre">Genre :</label>
+            <select id="Genre" name="Genre" required>
+                <option value="">Sélectionnez un genre</option>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+                <option value="Autre">Autre</option>
+            </select>
+
+            <label for="Date_de_naissance">Date de naissance :</label>
+            <input type="date" id="Date_de_naissance" name="Date_de_naissance" required>
+
+            <label for="Code_postal">Code postal :</label>
+            <input type="text" id="Code_postal" name="Code_postal" required>
+
+            <label for="Ville">Ville :</label>
+            <input type="text" id="Ville" name="Ville" required>
+
+            <label for="Adresse">Adresse :</label>
+            <input type="text" id="Adresse" name="Adresse" required>
+
+            <label for="Téléphone">Téléphone :</label>
+            <input type="tel" id="Téléphone" name="Téléphone" required>
+
+            <label for="username">Nom d'utilisateur :</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="Email">Adresse email :</label>
+            <input type="email" id="Email" name="Email" required>
+
+            <label for="Mot_de_passe">Mot de passe :</label>
+            <input type="password" id="Mot_de_passe" name="Mot_de_passe" required>
+
+            <label for="confirm_password">Confirmer le mot de passe :</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+
+            <button type="submit" name="submit">S'inscrire</button>
+        </form>
+        <p>Déjà inscrit ? <a href="login.php">Se connecter</a></p>
+    </div>
 </body>
 </html>

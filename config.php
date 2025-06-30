@@ -15,7 +15,10 @@ $options = [
 try {
     $pdo = new PDO($dsn, $user, $password, $options);
 } catch (PDOException $e) {
-    echo "Erreur de connexion : " . $e->getMessage();
+    // En production, mieux vaut ne pas afficher le détail de l'erreur
+    echo "Erreur de connexion à la base de données.";
+    // Pour le debug, tu peux décommenter la ligne suivante :
+    // echo "Erreur de connexion : " . $e->getMessage();
     exit;
 }
 ?>

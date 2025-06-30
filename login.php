@@ -32,26 +32,30 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h2>Connexion à Cmcavation</h2>
+<div class="login-container">
+    <h2>Connexion à Cmcavation</h2>
 
-<form method="POST" action="">
-    <label for="email">Adresse e-mail :</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+    <?php if (!empty($error)) : ?>
+        <div class="login-message error"><?= $error ?></div>
+    <?php endif; ?>
 
-    <label for="password">Mot de passe :</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+    <form method="POST" action="">
+        <label for="email">Adresse e-mail :</label>
+        <input type="email" id="email" name="email" required>
 
-    <button type="submit" name="login">Se connecter</button>
-</form>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
 
-<?php if (!empty($error)) : ?>
-    <p style="color: red;"><?= $error ?></p>
-<?php endif; ?>
+        <button type="submit" name="login">Se connecter</button>
+        <p><a href="forgot_password.php">Mot de passe oublié ?</a></p>
+    </form>
 
-<p>Pas encore inscrit ? <a href="register.php">Créer un compte</a></p>
+    <p>Pas encore inscrit ? <a href="register.php">Créer un compte</a></p>
+</div>
 
 </body>
 </html>

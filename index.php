@@ -30,8 +30,10 @@ $produits = $pdo->query("SELECT * FROM produits")->fetchAll();
 
         <p><strong>Bonjour <?= htmlspecialchars($user_name) ?>, bienvenue à bord !</strong></p>
         <p>Connecté en tant que : <strong><?= htmlspecialchars($user_name) ?></strong></p>
-           <a href="profil.php">Voir mon profil</a> |
-           <a href="logout.php">Se déconnecter</a>
+           <a href="profil.php">Voir mon profil</a><br><br>
+           <a href="dashboard.php">Mon Cockpit</a> <br> <br>
+
+           <a href="logout.php">Se déconnecter</a><br><br>
 
     </header>
 
@@ -45,6 +47,11 @@ $produits = $pdo->query("SELECT * FROM produits")->fetchAll();
                         <h3><?= htmlspecialchars($produit['nom']) ?></h3>
                         <p><?= htmlspecialchars($produit['description']) ?></p>
                         <p>Prix : <?= htmlspecialchars($produit['prix']) ?> €</p>
+                        <!-- Si tu veux afficher une image :
+                        <?php if (!empty($produit['photo'])): ?>
+                            <img src="<?= htmlspecialchars($produit['photo']) ?>" alt="Photo du produit" style="width:100%;max-height:160px;object-fit:cover;border-radius:6px;margin-bottom:10px;">
+                        <?php endif; ?>
+                        -->
                     </div>
                 <?php endforeach; ?>
             </div>

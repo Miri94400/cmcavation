@@ -36,18 +36,17 @@ if (!$user) {
         <a href="logout.php">Se déconnecter</a>
     </header>
 
-    <main>
+    <main class="profil-main">
         <h2>Mes informations</h2>
         <ul>
-            <li><strong>Nom :</strong> <?= htmlspecialchars($user['lastname']) ?></li><br>
-            <li><strong>Prénom :</strong> <?= htmlspecialchars($user['firstname']) ?></li><br>
-            <li><strong>Nom d'utilisateur :</strong> <?= htmlspecialchars($user['username']) ?></li><br>
-            <li><strong>Email :</strong> <?= htmlspecialchars($user['email']) ?></li><br>
-            <li><strong>Date de naissance :</strong> <?= htmlspecialchars($user['birthdate']) ?></li><br>
-            <li><strong>Adresse :</strong> <?= htmlspecialchars($user['adress']) ?>, <?= htmlspecialchars($user['Postal_code']) ?> <?= htmlspecialchars($user['city']) ?></li><br>
-            <li><strong>Téléphone :</strong> <?= htmlspecialchars($user['phone']) ?></li><br>
+            <li><strong>Nom :</strong> <?= htmlspecialchars($user['lastname']) ?></li>
+            <li><strong>Prénom :</strong> <?= htmlspecialchars($user['firstname']) ?></li>
+            <li><strong>Nom d'utilisateur :</strong> <?= htmlspecialchars($user['username']) ?></li>
+            <li><strong>Email :</strong> <?= htmlspecialchars($user['email']) ?></li>
+            <li><strong>Date de naissance :</strong> <?= htmlspecialchars($user['birthdate']) ?></li>
+            <li><strong>Adresse :</strong> <?= htmlspecialchars($user['adress']) ?>, <?= htmlspecialchars($user['Postal_code']) ?> <?= htmlspecialchars($user['city']) ?></li>
+            <li><strong>Téléphone :</strong> <?= htmlspecialchars($user['phone']) ?></li>
         </ul>
-
         <!-- Tu pourras plus tard ajouter un bouton pour modifier ces infos -->
     </main>
 </body>

@@ -3,11 +3,8 @@
 session_start();
 require_once 'config.php';
 
-// Test de la connexion PDO (à retirer après le test)
-// var_dump($pdo); exit;
-
 if (!isset($_SESSION['user_id'])) {
-    echo "Vous devez être connecté pour ajouter un favori.";
+    echo '<div class="message error">Vous devez être connecté pour ajouter un favori.</div>';
     exit;
 }
 
@@ -22,14 +19,14 @@ if (isset($_POST['ad_id'])) {
         // Ajoute le favori
         $stmt = $pdo->prepare("INSERT INTO favorite (user_id, ad_id) VALUES (?, ?)");
         if ($stmt->execute([$user_id, $ad_id])) {
-            echo "Annonce ajoutée aux favoris !";
+            echo '<div class="message success">Annonce ajoutée aux favoris !</div>';
         } else {
-            echo "Erreur lors de l'ajout du favori.";
+            echo '<div class="message error">Erreur lors de l\'ajout du favori.</div>';
         }
     } else {
-        echo "Cette annonce est déjà dans vos favoris.";
+        echo '<div class="message">Cette annonce est déjà dans vos favoris.</div>';
     }
 } else {
-    echo "Aucune annonce sélectionnée.";
+    echo '<div class="message error">Aucune annonce sélectionnée.</div>';
 }
 ?>
